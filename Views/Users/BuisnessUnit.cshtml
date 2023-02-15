@@ -19,7 +19,7 @@
                             {
                                 if(order.ClientID == client.ID)
                                 {
-                                    <a asp-controller="Orders" asp-action="Details" asp-route-id="order.ID">@order.TypePresta</a> <br>
+                                    <a asp-controller="Orders" asp-action="Details" asp-route-id="@order.ID">@order.TypePresta</a> <br>
                                 }
                             }
                         </li>
