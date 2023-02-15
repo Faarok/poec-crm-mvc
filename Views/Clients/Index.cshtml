@@ -1,0 +1,24 @@
+<h1>Clients</h1>
+
+<div class="table-bg bg-linear-gradient-medium">
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Details</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+
+        <tbody>
+            @foreach(var client in @Model)
+            {
+                <tr>
+                    <td>@client.Name</td>
+                    <td><a asp-controller="Clients" asp-action="Details" asp-route-id="@client.ID">Details</a></td>
+                    <td><a asp-controller="Clients" asp-action="Edit" asp-route-id="@client.ID">Edit</a></td>
+                    <td><a asp-controller="Clients" asp-action="Delete" asp-route-id="@client.ID" class="table-danger">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

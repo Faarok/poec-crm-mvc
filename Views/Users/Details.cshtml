@@ -1,0 +1,32 @@
+<div class="bloc">
+    <h1>Details of @Model.FirstName @Model.LastName</h1>
+
+    <div class="bloc-linear-gradient bg-linear-gradient-medium">
+        <div class="details">
+            <ul>
+                <li>Email</li>
+                <li>@Model.Email</li>
+            </ul>
+
+            <ul>
+                <li>Name</li>
+                <li>@Model.FirstName @Model.LastName</li>
+            </ul>
+
+            <ul>
+                <li>Buisness Unit</li>
+                <li><a asp-controller="Users" asp-action="BuisnessUnit" asp-route-buisnessunit="@Model.BuisnessUnit">@Model.BuisnessUnit</a></li>
+            </ul>
+
+            <ul>
+                <li>Grants</li>
+                <li>@Model.Grants</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bloc-actions">
+        <a asp-controller="Users" asp-action="Edit" asp-route-id="@Model.ID"><span class="material-icons">edit_note</span> Edit</a>
+        <a asp-controller="Users" asp-action="Delete" asp-route-id="@Model.ID"><span class="material-icons">delete</span> Delete</a>
+    </div>
+</div>

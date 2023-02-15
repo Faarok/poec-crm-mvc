@@ -1,0 +1,31 @@
+<div class="bloc">
+    <h1>Buisness Unit @Model.BuisnessUnit</h1>
+
+    <div class="bloc-linear-gradient bg-linear-gradient-medium">
+        <div class="details">
+            @foreach(Client client in RepoTools.ClientApi.Get())
+            {
+                if(client.BuisnessUnit == @Model.BuisnessUnit)
+                {
+                    <ul>
+                        <li>Name</li>
+                        <li>@client.Name</li>
+                    </ul>
+
+                    <ul>
+                        <li>Orders</li>
+                        <li>
+                            @foreach(Order order in RepoTools.OrderApi.Get())
+                            {
+                                if(order.ClientID == client.ID)
+                                {
+                                    <a asp-controller="Orders" asp-action="Details" asp-route-id="order.ID">@order.TypePresta</a> <br>
+                                }
+                            }
+                        </li>
+                    </ul>
+                }
+            }
+        </div>
+    </div>
+</div>

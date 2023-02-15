@@ -1,0 +1,40 @@
+@model User
+
+<div class="form-linear-gradient bg-linear-gradient-slow">
+    <form class="form" asp-controller="Users" asp-action="Create">
+        <h1>Create client</h1>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+
+        <label for="firstname">First name</label>
+        <input type="text" id="firstname" name="firstname">
+
+        <label for="lastname">Last name</label>
+        <input type="text" id="lastname" name="lastname">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+
+        <label for="confirmedpassword">Confirmed password</label>
+        <input type="password" id="confirmedpassword" name="confirmedpassword">
+
+        <label for="buisnessunit">Buisness Unit</label>
+        <select name="buisnessunit" id="buisnessunit">
+            <option value="">--Please choose a buisness unit</option>
+            <option value="FORMA">FORMA</option>
+            <option value="INGE">INGE</option>
+        </select>
+
+        <label for="grants">Grants</label>
+        <select name="grants" id="grants">Select grant
+            <option value="">--Please choose a grant--</option>
+            <option value="ADMIN">ADMIN</option>
+            <option value="USER">USER</option>
+        </select>
+
+        <div class="bloc-actions">
+            <button type="submit"><span class="material-icons">edit_note</span> Create</button>
+        </div>
+    </form>
+</div>

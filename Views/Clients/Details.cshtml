@@ -1,0 +1,55 @@
+<div class="bloc">
+    <h1>Details of @Model.Name</h1>
+
+    <div class="bloc-linear-gradient bg-linear-gradient-medium">
+        <div class="details">
+            <ul>
+                <li>Name</li>
+                <li>@Model.Name</li>
+            </ul>
+
+            <ul>
+                <li>State</li>
+                <li>@Model.State</li>
+            </ul>
+
+            <ul>
+                <li>TVA</li>
+                <li>@Model.TVA%</li>
+            </ul>
+
+            <ul>
+                <li>Total CA HT</li>
+                <li>@Model.TotalCaHt€</li>
+            </ul>
+
+            <ul>
+                <li>About</li>
+                <li class="quote">@Model.Comment Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aliquid quod dolore quis veritatis nobis obcaecati autem quibusdam reiciendis in ad quia sint, fugiat blanditiis fugit recusandae possimus id cumque!</li>
+            </ul>
+
+            <ul>
+                <li>Business Unit</li>
+                <li><a asp-controller="Users" asp-action="BuisnessUnit" asp-route-buisnessunit="@Model.BuisnessUnit">@Model.BuisnessUnit</a></li>
+            </ul>
+
+            <ul>
+                <li>Orders</li>
+                <li>
+                    @foreach(Order order in RepoTools.repoOrder.ReadAll())
+                    {
+                        if(order.ClientID == @Model.ID)
+                        {
+                            <a asp-controller="Orders" asp-action="Details" asp-route-id="@order.ID">@order.TypePresta</a> <br>
+                        }
+                    }
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bloc-actions">
+        <a asp-controller="Clients" asp-action="Edit" asp-route-id="@Model.ID"><span class="material-icons">edit_note</span> Edit</a>
+        <a asp-controller="Clients" asp-action="Delete" asp-route-id="@Model.ID"><span class="material-icons">delete</span> Delete</a>
+    </div>
+</div>

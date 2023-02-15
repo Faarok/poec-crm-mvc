@@ -1,0 +1,38 @@
+@model Order
+
+<div class="form-linear-gradient bg-linear-gradient-slow">
+    <form class="form" asp-controller="Orders" asp-action="Create">
+        <h1>Create order</h1>
+
+        <label for="clientid">Choose a client :</label>
+        <select id="clientid" name="clientid">
+            <option value="">--Please choose an option--</option>
+            @foreach(Client client in RepoTools.repoClient.ReadAll())
+            {
+                <option value="@client.ID">@client.Name</option>
+            }
+        </select>
+        
+        <label for="typepresta">Type presta</label>
+        <input type="text" id="typepresta" name="typepresta">
+
+        <label for="nbjours">Number days</label>
+        <input type="number" id="nbjours" name="nbjours">
+
+        <label for="tjmht">Average daily rate</label>
+        <input type="number" id="tjmht" name="tjmht" step=".01">
+
+        <label for="tva">TVA</label>
+        <input type="number" id="tva" name="tva" step=".01">
+
+        <label for="state">State</label>
+        <input type="text" id="state" name="state">
+
+        <label for="comment">About</label>
+        <input type="text" id="comment" name="comment">
+
+        <div class="bloc-actions">
+            <button type="submit"><span class="material-icons">edit_note</span> Create</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+@model Client
+
+<div class="form-linear-gradient bg-linear-gradient-slow">
+    <form class="form" asp-controller="Clients" asp-action="Edit">
+        <h1>Editing @Model.Name</h1>
+        
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="@Model.Name">
+
+        <label for="state">State</label>
+        <input type="text" id="state" name="state" value="@Model.State">
+
+        <label for="tva">TVA</label>
+        <input type="number" id="tva" name="tva" value="@Model.TVA" step=".01">
+
+        <label for="totalcaht">Total CA HT</label>
+        <input type="number" id="totalcaht" name="totalcaht" value="@Model.TotalCaHt" step=".01">
+
+        <label for="comment">About</label>
+        <input type="text" id="comment" name="comment" value="@Model.Comment">
+
+        <label for="buisnessunit">Buisness Unit</label>
+        <input type="text" id="buisnessunit" name="buisnessunit" value="@Model.BuisnessUnit">
+
+        <div class="bloc-actions">
+            <button type="submit"><span class="material-icons">edit_note</span> Edit</button>
+            <button ><span class="material-icons">delete</span> Delete</button>
+        </div>
+    </form>
+</div>

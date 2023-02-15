@@ -1,0 +1,47 @@
+<div class="bloc">
+    <h1>Details of order n°@Model.ID</h1>
+
+    <div class="bloc-linear-gradient bg-linear-gradient-medium">
+        <div class="details">
+            <ul>
+                <li>Client</li>
+                <li>@RepoTools.repoClient.Read(Model.ClientID).Name</li>
+            </ul>
+
+            <ul>
+                <li>Type presta</li>
+                <li>@Model.TypePresta</li>
+            </ul>
+
+            <ul>
+                <li>Number days</li>
+                <li>@Model.NbJours</li>
+            </ul>
+
+            <ul>
+                <li>Average daily rate HT</li>
+                <li>@Model.TjmHt</li>
+            </ul>
+
+            <ul>
+                <li>TVA</li>
+                <li>@Model.TVA%</li>
+            </ul>
+
+            <ul>
+                <li>State</li>
+                <li>@Model.State</li>
+            </ul>
+
+            <ul>
+                <li>About</li>
+                <li class="quote">@Model.Comment Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aliquid quod dolore quis veritatis nobis obcaecati autem quibusdam reiciendis in ad quia sint, fugiat blanditiis fugit recusandae possimus id cumque!</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bloc-actions">
+        <a asp-controller="Orders" asp-action="Edit" asp-route-id="@Model.ID"><span class="material-icons">edit_note</span> Edit</a>
+        <a asp-controller="Orders" asp-action="Delete" asp-route-id="@Model.ID"><span class="material-icons">delete</span> Delete</a>
+    </div>
+</div>

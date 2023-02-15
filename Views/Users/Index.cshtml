@@ -1,0 +1,24 @@
+<h1>Users</h1>
+
+<div class="table-bg bg-linear-gradient-medium">
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Details</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+
+        <tbody>
+            @foreach(var user in @Model)
+            {
+                <tr>
+                    <td>@user.FirstName @user.LastName</td>
+                    <td><a asp-controller="Users" asp-action="Details" asp-route-id="@user.ID">Details</a></td>
+                    <td><a asp-controller="Users" asp-action="Edit" asp-route-id="@user.ID">Edit</a></td>
+                    <td><a asp-controller="Users" asp-action="Delete" asp-route-id="@user.ID" class="table-danger">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
